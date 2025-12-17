@@ -50,10 +50,10 @@ The system is trained to recognize the following keywords. When recognized, the 
 
 | Voice Command | Bluetooth Action | PC Result (YouTube) |
 | :--- | :--- | :--- |
-| **"PLAY"** | Sends `Space` / `k` | Toggles Play/Pause |
-| **"PAUSE"** | Sends `Space` / `k` | Toggles Play/Pause |
-| **"NEXT"** | Sends `Shift+N` | Plays next video |
-| **"PREVIOUS"** | Sends `Shift+P` | Plays previous video |
+| **"START"** | Sends `Space` / `k` | Toggles Play/Pause |
+| **"STOP"** | Sends `Space` / `k` | Toggles Play/Pause |
+| **"FORWARD"** | Sends `L` | Skips +10s |
+| **"BACKWARD"** | Sends `J` | Skips -10s |
 
 *(Note: Exact key mappings depend on the Bluetooth implementation mode selected in `config.h`)*
 
@@ -72,26 +72,12 @@ The system is trained to recognize the following keywords. When recognized, the 
 1.  Power on the ESP32.
 2.  Open your PC's **Bluetooth Settings**.
 3.  Scan for new devices.
-4.  Connect to **"ESP32-Voice-Remote"**.
+4.  Connect to **"Voice-Remote-S3"**.
 5.  Once paired, the ESP32 acts as an input device.
 
 ### 3. Running
 1.  Open YouTube in your browser.
 2.  Ensure the browser window is in focus.
-3.  Speak a command (e.g., "NEXT") and watch the video change.
+3.  Speak a command (e.g., "STOP") and watch the video change.
 
 ---
-
-## 📂 Project Structure
-
-```text
-ESP32-VoiceTube-Remote/
-├── src/
-│   ├── main.cpp          # Main logic (Voice detection loop)
-│   ├── BluetoothMgr.cpp  # Handles BT connection and sending signals
-│   └── VoiceModel.cpp    # Speech recognition logic/TFLite model
-├── include/
-│   ├── config.h          # Pin definitions and BT settings
-│   └── commands.h        # Mapping voice keywords to BT signals
-├── README.md
-└── platformio.ini        # Project configuration
